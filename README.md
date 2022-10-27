@@ -13,4 +13,4 @@ This is an application that will help users create an extremely strong password 
 
 
 ## Deployed Link
-[Link]https://dylansantiago.github.io/Password-Generator/
+[Link](https://dylansantiago.github.io/Password-Generator/)
