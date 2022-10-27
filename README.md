@@ -13,4 +13,3 @@ This is an application that will help users create an extremely strong password 
 
 ## Deployed Link
 (Developing)
-

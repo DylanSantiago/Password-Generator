@@ -32,41 +32,40 @@ function generatePassword() {
   var upperPrompt = confirm("If you would like to include uppercase characters in your password, Click OK.");
   var lowerPrompt = confirm("If you would like to include lowercase characters in your password, Click OK.");
   
-  // Empty array to store password criteria
-  var passwordCriteria = [];
+  // Empty string to store password criteria
+  var passwordCriteria = " ";
 
   // Elements password will contain
-  var numberArray = [1,2,3,4,5,6,7,8,9,0];
-  var specialArray = ["!","@","#","$","%","^","&","*","(",")","?"];
-  var upperArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-  var lowerArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  var numberString = "1234567890";
+  var specialString = "!@,#$%^&*()?><;:{}][/";
+  var upperString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lowerString = "abcdefghijklmnopqrstuvwxyz";
 
-  // If user confirms a prompt, elements array will be pushed to the empty array above
+  // If user confirms a prompt, elements string will be pushed to the empty string above
   if (numberPrompt === true) {
-    passwordCriteria.push(numberArray);
+    passwordCriteria += numberString;
   }
   if (specialPrompt === true) {
-    passwordCriteria.push(specialArray);
+    passwordCriteria += specialString;
   }
   if (upperPrompt === true) {
-    passwordCriteria.push(upperArray);
+    passwordCriteria += upperString;
   }
   if (lowerPrompt === true) {
-    passwordCriteria.push(lowerArray);
+    passwordCriteria += lowerString;
   };
 
   // Variable that will hold randomly selected characters
   var passwordSelection = " ";
 
   // For loop setting character count set by user
-  for (var i = 0; i < characterPrompt; i++) {
+  for (var i = 0; i < (characterPrompt); i++) {
    
-   // Methods used to randomly select elements from chosen arrays by user
-   var passwordArrays = Math.floor(Math.random() * passwordCriteria.length);
-   var passwordContents = Math.floor(Math.random() * passwordCriteria[passwordArrays].length);
-    
+   // Methods used to randomly select elements from chosen stringd by user
+   var passwordStrings = Math.floor(Math.random() * passwordCriteria.length);
+   
    // Grouping selected elements and storing them in variable
-   passwordSelection = passwordSelection + passwordCriteria[passwordArrays][passwordContents];
+   passwordSelection += passwordCriteria[passwordStrings];
   
   }
 
